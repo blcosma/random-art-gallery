@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Artwork stats</title>
+</head>
+<body style="font-family: sans-serif;">
+    <h1>Artwork Display</h1>
+
+    <h2> Total views per image</h2>
+    <ul>
+        {% for image, count in counts.items() %}
+         <li><strong>{{ image }}</strong>: {{ count }} views</li>
+        {% endfor %} 
+    </ul>
+
+    <h2> Full log</h2>
+    <pre>
+        {% for log in logs %}
+        {{ log[0] }} - {{ log[1] }}
+        {% endfor %}
+    </pre>
+</body>    
+</html>
