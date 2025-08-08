@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import os, random
+import os
 from datetime import datetime
 from collections import Counter
 
@@ -33,5 +34,5 @@ def view_stats():
     return render_template("stats.html", logs=entries, counts=image_counts)
 
 if __name__ == "__main__":
-    port = int(os.enviroment.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=False)            
