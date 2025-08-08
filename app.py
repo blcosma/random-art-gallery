@@ -30,7 +30,7 @@ def random_art():
 
     # Log the view
     log_entry = f"{datetime.datetime.now()} | {img} | IP: {request.remote_addr} | Agent: {request.user_agent}\n"
-    with open(LOG_FILE, "a", encoding="uft-8") as f:
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(log_entry)
 
     return render_template("art.html", image_file=img)
@@ -44,7 +44,7 @@ def healt_check():
 @app.route("/stats")
 def view_stats():
     try:
-        with open(LOG_FILE, "r", encoding="uft-8") as f:
+        with open(LOG_FILE, "r", encoding="utf-8") as f:
             logs = f.readline()
     except FileNotFoundError:
         logs = []
