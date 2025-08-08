@@ -33,4 +33,5 @@ def view_stats():
     return render_template("stats.html", logs=entries, counts=image_counts)
 
 if __name__ == "__main__":
-    app.run(debug=True)            
+    port = int(os.enviroment.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)            
